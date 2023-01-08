@@ -18,7 +18,7 @@ public class ClockThread implements Runnable {
     @Override
     public void run() {
         Thread th = Thread.currentThread();
-        while (th.isInterrupted()) {
+        while (!th.isInterrupted()) {
             System.out.println(sdf.format(new Date()));
             try {
                 Thread.sleep(250);
